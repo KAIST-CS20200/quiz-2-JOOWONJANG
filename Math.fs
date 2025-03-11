@@ -6,4 +6,6 @@ open System
 /// 32-bit integer, and returns the number of steps it takes to reach 1 in the
 /// Collatz sequence.
 let collatz n =
-  0
+  let rec f n =
+    if n%2 = 0 then f n/2
+    else f (3*n+1)
